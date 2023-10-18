@@ -1,0 +1,20 @@
+[alias]
+    lg = log --graph -15 --abbrev=7 --decorate --date=relative --format=format:'%C(bold red)%h%C(re    set) -%C(bold yellow)%d%C(reset)%C(white)%w(110,1,2)%s%C(reset) %C(reset)%C(bold green)(%ar)%C(rese    t) %C(bold blue)<%an>%Creset' --all
+    lgc = log --graph -30 --abbrev=7 --decorate --date=relative --format=format:'%C(bold red)%h%C(r    eset) -%C(bold yellow)%d%C(reset)%C(white)%w(110,1,2)%s%C(reset) %C(reset)%C(bold green)(%ar)%C(res    et) %C(bold blue)<%an>%Creset'
+    slg = "!F() { git log --graph --abbrev=7 --decorate --date=relative --format=format:'%C(bold re    d)%h%C(reset) -%C(bold yellow)%d%C(reset)%C(white)%w(110,1,2)%s%C(reset) %C(reset)%C(bold green)(%a    r)%C(reset) %C(bold blue)<%an>%Creset' $1^..HEAD; }; F"
+    llg = log --graph -300 --abbrev=7 --decorate --date=relative --format=format:'%C(bold red)%h%C(    reset) -%C(bold yellow)%d%C(reset)%C(white)%w(110,1,2)%s%C(reset) %C(reset)%C(bold green)(%ar)%C(re    set) %C(bold blue)<%an>%Creset' --all
+    lgs = log --graph -15 --abbrev=7 --decorate --format=format:'%w(110,1,2)%s' --all
+    lg1 = log --graph -15 --abbrev=7 --pretty=format:'%Cred%h%Creset -%C(bold yellow)%d%Creset %n%w    (110,1,2)%s %C(bold green)(%cr) %C(bold blue)<%an>%Creset'
+    lg2 = log --graph -15 --abbrev=7 --decorate --format=format:'%C(bold blue)%h%C(reset) -%C(reset    )%C(bold yellow)%d %C(bold cyan)%aD%C(reset) %C(bold green)(%ar) %C(bold blue)<%an>%C(reset)%n''              %C(white)%n%w(110,1,2)%s%C(reset)%C(reset)' --all
+    lgme = log --graph -15 --abbrev=7 --decorate --date=relative --format=format:'%C(reset)%s%C(res    et)%Creset' --author=newro --since=6am
+    lgyes = log --graph -15 --abbrev=7 --decorate --date=relative --format=format:'%C(reset)%s%C(re    set)%Creset' --author=newro --since=yesterday
+    dl = diff --name-only
+    list = log --cherry-pick --right-only --decorate --date=relative --format=format:'%C(bold red)%    h%C(reset) -%C(bold yellow)%d%C(reset)%C(white)%w(110,1,2)%s%C(reset) %C(reset)%C(bold green)(%ar)%    C(reset) %C(bold blue)<%an>%Creset'
+    dc = diff --cached
+    ss = status -uno
+    ci = commit -a
+    co = checkout
+    rollback = reset --hard HEAD
+    noff = merge --no-ff
+    close = "!f() { git merge --no-ff -m \"Closes $1\" $1; }; f"
+    clear = !git branch -d $1 && git remote prune origin
