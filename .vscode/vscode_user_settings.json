@@ -1,0 +1,49 @@
+{
+    "prettier.vueIndentScriptAndStyle": true,
+    "git.autofetch": true,
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "window.zoomLevel": 1,
+    "json.format.keepLines": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnType": true,
+    "[java]": {
+        "editor.detectIndentation": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.tabSize": 4
+    },
+    "debug.openDebug": "neverOpen",
+    //   "editor.fontFamily": "ShureTechMono Nerd Font",
+    "editor.fontSize": 11.5,
+    "gitlens.autolinks": [
+        {
+            "prefix": "PIL-",
+            "url": "",
+            "ignoreCase": false
+        }
+    ],
+    "gitlens.codeLens.enabled": false,
+    "gitlens.graph.minimap.enabled": false,
+    "java.completion.favoriteStaticMembers": [
+        "net.logstash.logback.argument.StructuredArguments.*",
+        "org.assertj.core.api.Assertions.*",
+        "org.junit.Assert.*",
+        "org.junit.Assume.*",
+        "org.junit.jupiter.api.DynamicTest.*",
+        "org.mockito.Mockito.*",
+        "org.mockito.ArgumentMatchers.*",
+        "org.mockito.Answers.*",
+        "org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*",
+        "org.springframework.test.web.servlet.result.MockMvcResultMatchers.*"
+    ],
+    "java.completion.importOrder": [ "", "javax", "java", "#" ],
+    "java.format.comments.enabled": false,
+    "java.inlayHints.parameterNames.enabled": "none"
+}
