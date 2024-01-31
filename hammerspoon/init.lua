@@ -6,7 +6,9 @@ local keyMap = {
     S = "Slack",
     T = "iTerm",
     N = 'notes',
+    M = 'YouTube Music',
     K = 'kakaoTalk',
+    B = 'Beekeeper Studio'
 }
 
 for k, prog in pairs(keyMap) do
