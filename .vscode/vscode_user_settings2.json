@@ -1,0 +1,173 @@
+{
+    "[java]": {
+        "editor.detectIndentation": false,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+        "editor.tabSize": 4
+    },
+    "java.completion.favoriteStaticMembers": [
+        "net.logstash.logback.argument.StructuredArguments.*",
+        "org.assertj.core.api.Assertions.*",
+        "org.junit.Assert.*",
+        "org.junit.Assume.*",
+        "org.junit.jupiter.api.DynamicTest.*",
+        "org.mockito.Mockito.*",
+        "org.mockito.ArgumentMatchers.*",
+        "org.mockito.Answers.*",
+        "org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*",
+        "org.springframework.test.web.servlet.result.MockMvcResultMatchers.*"
+    ],
+    "java.completion.importOrder": [
+        "",
+        "javax",
+        "java",
+        "#"
+    ],
+    "java.format.comments.enabled": false,
+    "java.format.settings.url": "/Users/dabom-choi/.vscode/vscode-java-pshyg-style.xml",
+    "java.inlayHints.parameterNames.enabled": "none",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 4,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.suggestSelection": "first",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+        // "editor.tabSize": 2
+    },
+    "[javascript][typescript][typescriptreact]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+        // "editor.tabSize": 2,
+    },
+    "[json][jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+        // "editor.tabSize": 2,
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "javascript.format.semicolons": "insert",
+    "typescript.format.semicolons": "insert",
+    // "javascript.preferences.quoteStyle": "single",
+    // "typescript.preferences.quoteStyle": "single",
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "liveServer.settings.host": "",
+    "liveServer.settings.donotShowInfoMsg": true,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "cSpell.userWords": [
+        "artboard",
+        "Cachable",
+        "calendar",
+        "clippable",
+        "clsx",
+        "flippable",
+        "immer",
+        "itext",
+        "Lotte",
+        "ns",
+        "Pagable",
+        "pageable",
+        "Portone",
+        "SIGNIN",
+        "SIGNOUT",
+        "snappable",
+        "So",
+        "springbootoauth",
+        "strikethrough",
+        "tanstack",
+        "Textbox",
+        "unessceary",
+        "unsupport",
+        "upsert",
+        "Vcat",
+        "vcatdev",
+        "vite",
+        "zustand"
+    ],
+    "gitHistory.alwaysPromptRepositoryPicker": true,
+    "extensions.ignoreRecommendations": true,
+    "git.confirmSync": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "spring.initializr.defaultLanguage": "Java",
+    "terminal.integrated.env.osx": {
+        "FIG_NEW_SESSION": "1"
+    },
+    "gradle.nestedProjects": false,
+    "git.ignoreRebaseWarning": true,
+    "debug.openDebug": "neverOpen",
+    "testing.openTesting": "neverOpen",
+    "vim.camelCaseMotion.enable": true,
+    "vim.easymotion": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "vim.hlsearch": true,
+    "vim.ignorecase": false,
+    "vim.incsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "after": [
+                "<Esc>"
+            ],
+            "before": [
+                "j",
+                "j"
+            ]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "after": [
+                "d",
+                "d"
+            ],
+            "before": [
+                "<leader>",
+                "d"
+            ]
+        },
+        {
+            "before": [
+                "<C-n>"
+            ],
+            "commands": [
+                ":nohl"
+            ]
+        }
+    ],
+    "vim.useCtrlKeys": true,
+    "vim.useSystemClipboard": true,
+    "editor.fontSize": 11,
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-11",
+            "path": "/opt/homebrew/Cellar/openjdk@11/11.0.20.1/libexec/openjdk.jdk",
+            "default": true
+        }
+    ],
+    "githubPullRequests.pullBranch": "never",
+    "workbench.startupEditor": "none",
+    // 파일을 저장할 때마다 `eslint` 규칙에 따라 자동으로 코드를 수정
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    // `prettier`를 기본 포맷터로 지정
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // 파일을 저장할 때마다 포매팅 실행
+    "editor.formatOnSave": true,
+    "editor.accessibilitySupport": "on",
+    "window.zoomLevel": 2,
+    "editor.minimap.enabled": false,
+    "accessibility.signals.lineHasError": {
+        "sound": "off"
+    },
+    "accessibility.signals.chatResponsePending": {
+        "sound": "off"
+    },
+}
