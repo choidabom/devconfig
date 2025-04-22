@@ -4,11 +4,13 @@ local keyMap = {
     F = "Finder",
     P = "Postman",
     S = "Slack",
-    T = "iTerm",
+    I = "iTerm",
     N = 'notes',
-    M = 'YouTube Music',
     K = 'kakaoTalk',
-    B = 'Beekeeper Studio'
+    B = 'Beekeeper Studio',
+    M = 'YouTube Music',
+    D = 'Discord',
+    X = 'Cursor',
 }
 
 for k, prog in pairs(keyMap) do
@@ -35,3 +37,7 @@ end
 local function remapKey(modifiers, key, keyCode)
    hs.hotkey.bind(modifiers, key, keyCode, nil, keyCode)
 end
+
+hs.hotkey.bind({'ctrl', 'cmd'}, ';', function()
+    hs.alert.show('sunflower', {fadeInDuration = 0, fadeOutDuration = 0}, 0.03)
+end)
