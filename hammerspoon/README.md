@@ -17,7 +17,7 @@
 
 1. 다운로드 및 설치
 
-   - Downlod : https://www.hammerspoon.org/
+   - Download : https://www.hammerspoon.org/
 
 2. 설정
 
@@ -41,11 +41,13 @@ local keyMap = {
     F = "Finder",
     P = "Postman",
     S = "Slack",
-    T = "iTerm",
+    I = "iTerm",
     N = 'notes',
-    M = 'YouTube Music',
     K = 'kakaoTalk',
-    B = 'Beekeeper Studio'
+    B = 'Beekeeper Studio',
+    M = 'YouTube Music',
+    D = 'Discord',
+    X = 'Cursor',
 }
 
 for k, prog in pairs(keyMap) do
