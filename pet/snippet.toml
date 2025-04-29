@@ -1,0 +1,24 @@
+[[snippets]]
+  description = "[docker proxy build & AWS set default profile]"
+  command = "docker-compose up -d --build proxy && export AWS_PROFILE=default"
+  output = ""
+
+[[snippets]]
+  description = "[git] master sync"
+  command = "git checkout master && git pull --prune && git branch -D "
+  output = ""
+  
+[[snippets]]
+  description = "[docker-compose] infra-up"
+  command = "sh ~/Source/dcup.sh"
+  output = ""
+
+[[snippets]]
+  description = "[docker-compose] infra-down"
+  command = "sh ~/Source/dcdown.sh"
+  output = ""
+
+[[snippets]]
+  description = "[port is already in use] port"
+  command = "lsof -i:"
+  output = ""
