@@ -1,27 +1,31 @@
 #!/bin/bash
 
 # 색상 정의
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-ORANGE='\033[38;5;208m'
-NC='\033[0m' # No Color
+RED='\033[0;31m'      # 오류 메시지용
+GREEN='\033[0;32m'    # 진행 상태용
+YELLOW='\033[1;33m'   # 경고 메시지용
+ORANGE='\033[38;5;208m' # 설정 정보용
+NC='\033[0m'          # 색상 초기화
 
 # 로그 함수
 log_info() {
+    # 진행 상태 표시 (설치, 복사 등 진행 중인 작업)
     echo -e "${GREEN}→ $1${NC}"
 }
 
 log_set() {
-    echo -e "${ORANGE}→ $1${NC}"
+    # 설정 정보나 중요한 결과 표시
+    echo -e "${ORANGE}• $1${NC}"
 }
 
 log_warn() {
-    echo -e "${YELLOW}[WARN]${NC} $1"
+    # 주의가 필요한 경고 메시지
+    echo -e "${YELLOW}⚠ $1${NC}"
 }
 
 log_error() {
-    echo -e "${RED}[ERROR]${NC} $1"
+    # 오류 메시지
+    echo -e "${RED}✖ $1${NC}"
 }
 
 # Homebrew 설치 확인
@@ -85,7 +89,6 @@ setup_rectangle() {
     brew install rectangle
 
     log_set "Rectangle이 설치되었습니다. 앱을 실행하여 권한을 허용해주세요."
-
 }
 
 # 메인 설치 프로세스
@@ -113,21 +116,33 @@ main() {
     setup_rectangle
     echo
 
-    echo -e "설치가 완료되었습니다!"
+    log_set "설치가 완료되었습니다!"
     echo
-    log_set "Hammerspoon 단축키 설정:"
-    log_set "init.lua 설정을 확인하고, 필요한 어플리케이션 단축키를 추가해주세요."
+
+    log_info "Hammerspoon 단축키 설정:"
+    log_set "• init.lua 설정을 확인하고, 필요한 어플리케이션 단축키를 추가해주세요."
     echo
-    log_set "Pet 단축키 설정:"
-    log_set "'pet list' 명령어로 설정 확인하고, 'pet new' 혹은 'pet edit' 명령어로 필요한 명령어를 추가해주세요."
+
+    log_info "Rectangle 단축키 설정:"
+    log_set "• ⌘ + Option + ←: 윈도우를 화면 왼쪽으로 이동"
+    log_set "• ⌘ + Option + →: 윈도우를 화면 오른쪽으로 이동"
+    log_set "• ⌘ + Option + ↑: 윈도우를 최대화"
+    log_set "• ⌘ + Option + ↓: 윈도우를 원래 크기로 복원"
     echo
-    log_set "Rectangle 단축키 설정:"
-    log_set "⌘ + Option + ←: 윈도우를 화면 왼쪽으로 이동"
-    log_set "⌘ + Option + →: 윈도우를 화면 오른쪽으로 이동"
-    log_set "⌘ + Option + ↑: 윈도우를 최대화"
-    log_set "⌘ + Option + ↓: 윈도우를 원래 크기로 복원"
+
+    log_info "Pet 단축키 설정:"
+    pet list
+    log_set "• 'pet list' 명령어로 설정 확인하고, 'pet new' 혹은 'pet edit' 명령어로 필요한 명령어를 추가해주세요."
     echo
-    log_set "Hammerspoon과 Rectangle을 실행하여 필요한 권한을 허용해주세요."
+
+    # 설치 이후 앱 자동으로 실행되도록
+    log_info "설치된 앱들을 실행합니다..."
+    open ~/.hammerspoon/init.lua 
+    open -a Hammerspoon
+    open -a Rectangle
+    echo
+    
+    log_set "앱들이 실행되었습니다. 각 앱의 권한 요청 창이 나타나면 허용해주세요."
 }
 
 # 스크립트 실행
