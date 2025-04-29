@@ -1,6 +1,5 @@
 # Hammerspoon 
 
-
 > **This is a tool for powerful automation of macOS.** At its core, Hammerspoon is just a bridge between the operating system and a Lua scripting engine. What gives Hammerspoon its power is a set of extensions that expose specific pieces of system functionality, to the user.'
 
 라고 공식문서에 나와있다. 
@@ -13,18 +12,24 @@
 
 라고 필자가 답했다. 
 
+https://github.com/Hammerspoon/hammerspoon
+
 ## 설치
 
-1. 다운로드 및 설치
+- brew를 사용하여 설치할 수 있다.
+  ```bash
+   brew install hammerspoon
+  ```
+- 또는 홈페이지에서 직접 다운로드할 수 있다.
+   - https://www.hammerspoon.org/
 
-   - Download : https://www.hammerspoon.org/
+## 기본 설정
 
-2. 설정
+- 첫 실행 시, Hammerspoon이 시스템 권한을 요청할 수 있다.
 
-   - 첫 실행 시, Hammerspoon이 시스템 권한을 요청할 수 있다.
-     `시스템 환경 설정 - 보안 및 개인정보 보호 - 손쉬운 사용`에서 Hammerspoon에 권한을 부여해야 정상적으로 동작한다.
+   `시스템 환경 설정 - 보안 및 개인정보 보호 - 손쉬운 사용`에서 Hammerspoon에 권한을 부여해야 정상적으로 동작한다.
 
-3. 스크립트 작성
+- 스크립트 작성
    - Hammerspoon의 설정은 `~/.hammerspoon/init.lua` 파일에서 작성하면 된다.
    - `init.lua`는 Hammerspoon이 실행될 때 로드되는 주요 설정 파일이다.
 
