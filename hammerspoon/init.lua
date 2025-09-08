@@ -1,8 +1,7 @@
 local keyMap = {
     C = "Google Chrome",
-    V = "Visual Studio Code",
     F = "Finder",
-    P = "Postman",
+    P = "ChatGPT",
     S = "Slack",
     I = "iTerm",
     N = 'notes',
