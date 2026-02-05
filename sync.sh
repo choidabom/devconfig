@@ -35,4 +35,12 @@ ln -sf "$SCRIPT_DIR/pet/snippet.toml" ~/.config/pet/snippet.toml
 log_done "Pet 심볼릭 링크 완료"
 echo
 
+# Fig
+log_info "Fig 심볼릭 링크 생성 중..."
+mkdir -p ~/.fig
+rm -f ~/.fig/settings.json
+ln -sf "$SCRIPT_DIR/fig/settings.json" ~/.fig/settings.json
+log_done "Fig 심볼릭 링크 완료"
+echo
+
 log_done "모든 심볼릭 링크 설정이 완료되었습니다!"
