@@ -1,15 +1,15 @@
 local keyMap = {
+    A = "BingGPT",
     C = "Google Chrome",
+    E = "Visual Studio Code",
     F = "Finder",
+    L = "DeepL",
+    M = "Beekeeper Studio",
+    P = "Postman",
     S = "Slack",
-    I = "iTerm",
+    T = "iTerm",
     N = 'notes',
     K = 'kakaoTalk',
-    B = 'Beekeeper Studio',
-    M = 'YouTube Music',
-    D = 'Discord',
-    X = 'Cursor',
-    Z = 'Zed'
 }
 
 for k, prog in pairs(keyMap) do
@@ -37,15 +37,11 @@ local function remapKey(modifiers, key, keyCode)
    hs.hotkey.bind(modifiers, key, keyCode, nil, keyCode)
 end
 
+remapKey({'option'}, 'h', keyCode('left'))
+remapKey({'option'}, 'j', keyCode('down'))
+remapKey({'option'}, "k", keyCode("up"))
+remapKey({'option'}, 'l', keyCode('right'))
+
 hs.hotkey.bind({'ctrl', 'cmd'}, ';', function()
-    hs.alert.show('sunflower', {fadeInDuration = 0, fadeOutDuration = 0}, 0.03)
+    hs.alert.show('wake up', {fadeInDuration = 0, fadeOutDuration = 0}, 0.03)
 end)
-
--- Load move-resize module
--- require("move-resize")
-
--- -- Load window-management module
--- local wm = require("window-management")
--- hs.hotkey.bind({'ctrl', 'cmd'}, 'M', function()
---     wm.windowToggleMaximize()
--- end)
