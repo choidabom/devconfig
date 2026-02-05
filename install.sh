@@ -69,6 +69,15 @@ setup_pet() {
     log_info "Pet 설정 파일 복사 중..."
     cp pet/snippet.toml ~/.config/pet/snippet.toml
 
+    log_info "Pet zsh 설정 추가 중..."
+    # .zshrc에 Pet 설정이 이미 있는지 확인
+    if ! grep -q "# Pet - CLI snippet manager" ~/.zshrc; then
+        cat zsh/pet.zsh >> ~/.zshrc
+        log_set "Pet zsh 키 바인딩이 .zshrc에 추가되었습니다."
+    else
+        log_warn "Pet zsh 키 바인딩이 이미 .zshrc에 존재합니다."
+    fi
+
     log_set "Pet이 설치되었습니다."
 }
 
