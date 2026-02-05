@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Detect user dynamically
+USER_ID=$(whoami)
+SESSION_NAME="${USER_ID}-dev"
+
+export SHELL=`which zsh`
+export TERM=screen-256color-bce
+
+TMUX=`which tmux 2>&1`
+if [ -x "$TMUX" ]; then
+    tmux -S /tmp/${SESSION_NAME} detach -a -s ${SESSION_NAME}
+
+    if [ -f "$HOME/.tmuxp/${SESSION_NAME}.yaml" ]; then
+        tmuxp load ~/.tmuxp/${SESSION_NAME}.yaml
+    else
+        tmux -2 -S /tmp/${SESSION_NAME} -f $HOME/devconfig/tmux/.tmux.conf new -A -s ${SESSION_NAME}
+    fi
+fi

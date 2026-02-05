@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# 스크립트 디렉토리 경로
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
 # 색상 정의
 RED='\033[0;31m'      # 오류 메시지용
 GREEN='\033[0;32m'    # 진행 상태용
@@ -55,9 +58,6 @@ setup_hammerspoon() {
     log_info "Hammerspoon 설치 중..."
     brew install hammerspoon
 
-    log_info "Hammerspoon 설정 파일 복사 중..."
-    cp -r hammerspoon ~/.hammerspoon
-
     log_set "Hammerspoon이 설치되었습니다. 앱을 실행하여 권한을 허용해주세요."
 }
 
@@ -66,28 +66,13 @@ setup_pet() {
     log_info "Pet 설치 중..."
     brew install knqyf263/pet/pet
 
-    log_info "Pet 설정 파일 복사 중..."
-    cp pet/snippet.toml ~/.config/pet/snippet.toml
-
-    log_info "Pet zsh 설정 추가 중..."
-    # .zshrc에 Pet 설정이 이미 있는지 확인
-    if ! grep -q "# Pet - CLI snippet manager" ~/.zshrc; then
-        cat zsh/pet.zsh >> ~/.zshrc
-        log_set "Pet zsh 키 바인딩이 .zshrc에 추가되었습니다."
-    else
-        log_warn "Pet zsh 키 바인딩이 이미 .zshrc에 존재합니다."
-    fi
-
-    log_set "Pet이 설치되었습니다."
+    log_set "Pet이 설치되었습니다. (키바인딩은 zsh 모듈에서 자동 로드됨)"
 }
 
 # Fig 설치 및 설정
 setup_fig() {
     log_info "Fig 설치 중..."
     brew install fig
-
-    log_info "Fig 설정 파일 복사 중..."
-    cp fig/settings.json ~/.fig/settings.json
 
     log_set "Fig가 설치되었습니다."
 }
@@ -99,6 +84,36 @@ setup_rectangle() {
 
     log_set "Rectangle이 설치되었습니다. 앱을 실행하여 권한을 허용해주세요."
 }
+
+# Tmux 설치
+setup_tmux() {
+    log_info "Tmux 설치 중..."
+    brew install tmux
+
+    log_set "Tmux가 설치되었습니다."
+}
+
+# Zsh 설정
+setup_zsh() {
+    log_info "Zsh devconfig 모듈 설정 중..."
+
+    # .zshrc에 devconfig 모듈 로딩이 이미 있는지 확인
+    if ! grep -q "# Load devconfig zsh modules" ~/.zshrc; then
+        cat >> ~/.zshrc << 'EOF'
+
+# Load devconfig zsh modules
+for config_file in ~/devconfig/zsh/*.zsh; do
+    source $config_file
+done
+EOF
+        log_set "devconfig zsh 모듈이 .zshrc에 추가되었습니다."
+    else
+        log_warn "devconfig zsh 모듈이 이미 .zshrc에 존재합니다."
+    fi
+
+    log_set "Zsh 설정이 완료되었습니다. 터미널을 재시작하면 적용됩니다."
+}
+
 
 # 메인 설치 프로세스
 main() {
@@ -125,7 +140,22 @@ main() {
     setup_rectangle
     echo
 
+    setup_tmux
+    echo
+
+    setup_zsh
+    echo
+
+    # 심볼릭 링크 자동 생성
+    log_info "설정 파일 심볼릭 링크 생성 중..."
+    "$SCRIPT_DIR/sync.sh"
+    echo
+
     log_set "설치가 완료되었습니다!"
+    echo
+
+    log_info "다음 단계:"
+    log_set "• 터미널을 재시작하여 zsh 설정을 적용하세요."
     echo
 
     log_info "Hammerspoon 단축키 설정:"
