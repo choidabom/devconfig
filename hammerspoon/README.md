@@ -42,9 +42,8 @@ https://github.com/Hammerspoon/hammerspoon
 ```lua
 local keyMap = {
     C = "Google Chrome",
-    V = "Visual Studio Code",
     F = "Finder",
-    P = "Postman",
+    P = "ChatGPT",
     S = "Slack",
     I = "iTerm",
     N = 'notes',
@@ -53,6 +52,7 @@ local keyMap = {
     M = 'YouTube Music',
     D = 'Discord',
     X = 'Cursor',
+    Z = 'Zed',
 }
 
 for k, prog in pairs(keyMap) do

@@ -1,13 +1,23 @@
 [[snippets]]
+  description = "[git] master sync"
+  command = "git checkout master && git pull --prune && git branch -D "
+  output = ""
+
+[[snippets]]
+  description = "[git] checkout deploy/dev & pull"
+  command = "git checkout deploy/dev && git pull"
+  output = ""
+
+[[snippets]]
+  description = "[git] checkout deploy/alpha & pull"
+  command = "git checkout deploy/alpha && git pull"
+  output = ""
+
+[[snippets]]
   description = "[docker proxy build & AWS set default profile]"
   command = "docker-compose up -d --build proxy && export AWS_PROFILE=default"
   output = ""
 
-[[snippets]]
-  description = "[git] master sync"
-  command = "git checkout master && git pull --prune && git branch -D "
-  output = ""
-  
 [[snippets]]
   description = "[docker-compose] infra-up"
   command = "sh ~/Source/dcup.sh"
@@ -21,4 +31,9 @@
 [[snippets]]
   description = "[port is already in use] port"
   command = "lsof -i:"
+  output = ""
+
+[[snippets]]
+  description = "[devconfig] sync - 레포 설정을 로컬에 반영"
+  command = "~/devconfig/sync.sh"
   output = ""
