@@ -14,6 +14,11 @@
   output = ""
 
 [[snippets]]
+  description = "[git] branch force delete"
+  command = "git branch -D "
+  output = ""
+
+[[snippets]]
   description = "[docker proxy build & AWS set default profile]"
   command = "docker-compose up -d --build proxy && export AWS_PROFILE=default"
   output = ""
