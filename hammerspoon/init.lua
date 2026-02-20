@@ -9,7 +9,8 @@ local keyMap = {
     M = 'YouTube Music',
     D = 'Discord',
     X = 'Cursor',
-    Z = 'Zed'
+    Z = 'Zed',
+    G = 'Ghostty'
 }
 
 for k, prog in pairs(keyMap) do
