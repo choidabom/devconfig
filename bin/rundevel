@@ -14,6 +14,6 @@ if [ -x "$TMUX" ]; then
     if [ -f "$HOME/.tmuxp/${SESSION_NAME}.yaml" ]; then
         tmuxp load ~/.tmuxp/${SESSION_NAME}.yaml
     else
-        tmux -2 -S /tmp/${SESSION_NAME} -f $HOME/devconfig/tmux/.tmux.conf new -A -s ${SESSION_NAME}
+        tmux -2 -S /tmp/${SESSION_NAME} -f $HOME/devconfig/.tmux.conf new -A -s ${SESSION_NAME}
     fi
 fi
