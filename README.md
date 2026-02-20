@@ -1,34 +1,47 @@
 # devconfig
 
-Mac 개발 환경 설정 파일 모음
+Mac 개발 환경 설정 파일 모음. [GNU Stow](https://www.gnu.org/software/stow/)를 사용하여 심볼릭 링크를 관리합니다.
+
+## 구조
+
+```
+devconfig/
+├── .config/                        → ~/.config/
+│   ├── karabiner/karabiner.json       한영 전환 자동화
+│   └── pet/snippet.toml               CLI 스니펫
+├── .fig/settings.json              → ~/.fig/
+├── .hammerspoon/init.lua           → ~/.hammerspoon/
+├── .tmux.conf                      → ~/.tmux.conf
+│
+├── zsh/                            ~/devconfig/zsh/*.zsh (source)
+├── bin/                            ~/devconfig/bin (PATH)
+└── install.sh, sync.sh
+```
+
+## 설치
+
+```bash
+# 최초 설치 (Homebrew, 도구 설치, zsh 설정, 심볼릭 링크)
+./install.sh
+
+# 심볼릭 링크만 재생성
+./sync.sh
+
+# 또는 직접 stow 실행
+stow -t ~ --restow .
+```
 
 ## Tools
 
-| 도구 | 설명 | 설정 경로 |
-|------|------|-----------|
-| [Hammerspoon](hammerspoon/) | 키보드 단축키로 앱 실행 | `~/.hammerspoon/` |
-| [Pet](pet/) | CLI 명령어 스니펫 관리 | `~/.config/pet/snippet.toml` |
-| [Tmux](tmux/) | 터미널 멀티플렉서 | `~/devconfig/tmux/.tmux.conf` |
-| [Zsh](zsh/) | Shell 설정 및 유틸리티 | `~/devconfig/zsh/*.zsh` |
-| Fig | 터미널 자동완성 | `~/.fig/settings.json` |
+| 도구 | 설명 | 심링크 경로 |
+|------|------|-------------|
+| [Hammerspoon](.hammerspoon/) | 키보드 단축키로 앱 실행 | `~/.hammerspoon/` |
+| [Karabiner](.config/karabiner/) | 한영 전환 자동화 (ESC, Ctrl+HJKL, ₩→`) | `~/.config/karabiner/` |
+| [Pet](.config/pet/) | CLI 명령어 스니펫 관리 | `~/.config/pet/` |
+| Tmux | 터미널 멀티플렉서 | `~/.tmux.conf` |
+| Fig | 터미널 자동완성 | `~/.fig/` |
+| [Zsh](zsh/) | Shell 설정 및 유틸리티 | 직접 source |
 | Rectangle | 윈도우 크기/위치 조절 | - |
-
-## Usage
-
-```bash
-# 최초 설치 (Homebrew, Hammerspoon, Pet, Fig, Rectangle, Tmux)
-# + Zsh 설정 자동 추가 (devconfig 모듈 로딩)
-# + 설정 파일 심볼릭 링크 자동 생성
-./install.sh
-
-# 터미널 재시작 후 devconfig 설정 적용됨
-
-# 개발 환경 시작 (Tmux 세션)
-rundevel
-
-# 레포 수정 후 로컬에 반영 (심볼릭 링크 재생성 필요시)
-./sync.sh
-```
 
 ## Zsh Utilities
 

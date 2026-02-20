@@ -1,0 +1,27 @@
+# stow 기본 무시 패턴
+\.git
+\.gitignore
+\.gitmodules
+
+# 레포 관리 파일
+README\.md
+LICENSE
+install\.sh
+sync\.sh
+
+# 직접 참조하는 디렉토리 (심링크 불필요)
+^bin$
+^zsh$
+^docs$
+
+# 프로젝트 설정
+^\.claude$
+^\.gitconfig$
+^\.husky$
+^\.vscode$
+^\.stow-local-ignore$
+
+# 기타
+^iterm2$
+^rectangle$
+^vim$

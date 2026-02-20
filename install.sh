@@ -12,22 +12,18 @@ NC='\033[0m'          # 색상 초기화
 
 # 로그 함수
 log_info() {
-    # 진행 상태 표시 (설치, 복사 등 진행 중인 작업)
     echo -e "${GREEN}→ $1${NC}"
 }
 
 log_set() {
-    # 설정 정보나 중요한 결과 표시
     echo -e "${ORANGE}• $1${NC}"
 }
 
 log_warn() {
-    # 주의가 필요한 경고 메시지
     echo -e "${YELLOW}⚠ $1${NC}"
 }
 
 log_error() {
-    # 오류 메시지
     echo -e "${RED}✖ $1${NC}"
 }
 
@@ -46,26 +42,24 @@ check_brew() {
     fi
 }
 
-# 디렉토리 생성
-create_directories() {
-    log_info "필요한 디렉토리 생성 중..."
-    mkdir -p ~/.config/pet
-    mkdir -p ~/.fig
-}
-
 # Hammerspoon 설치 및 설정
 setup_hammerspoon() {
     log_info "Hammerspoon 설치 중..."
     brew install hammerspoon
-
     log_set "Hammerspoon이 설치되었습니다. 앱을 실행하여 권한을 허용해주세요."
+}
+
+# Karabiner-Elements 설치
+setup_karabiner() {
+    log_info "Karabiner-Elements 설치 중..."
+    brew install --cask karabiner-elements
+    log_set "Karabiner-Elements가 설치되었습니다."
 }
 
 # Pet 설치 및 설정
 setup_pet() {
     log_info "Pet 설치 중..."
     brew install knqyf263/pet/pet
-
     log_set "Pet이 설치되었습니다. (키바인딩은 zsh 모듈에서 자동 로드됨)"
 }
 
@@ -73,7 +67,6 @@ setup_pet() {
 setup_fig() {
     log_info "Fig 설치 중..."
     brew install fig
-
     log_set "Fig가 설치되었습니다."
 }
 
@@ -81,7 +74,6 @@ setup_fig() {
 setup_rectangle() {
     log_info "Rectangle 설치 중..."
     brew install rectangle
-
     log_set "Rectangle이 설치되었습니다. 앱을 실행하여 권한을 허용해주세요."
 }
 
@@ -89,8 +81,14 @@ setup_rectangle() {
 setup_tmux() {
     log_info "Tmux 설치 중..."
     brew install tmux
-
     log_set "Tmux가 설치되었습니다."
+}
+
+# GNU Stow 설치
+setup_stow() {
+    log_info "GNU Stow 설치 중..."
+    brew install stow
+    log_set "GNU Stow가 설치되었습니다."
 }
 
 # Zsh 설정
@@ -122,13 +120,16 @@ main() {
 
     # Homebrew 확인
     check_brew
-
-    # 디렉토리 생성
-    create_directories
     echo
 
     # 각 도구 설치
+    setup_stow
+    echo
+
     setup_hammerspoon
+    echo
+
+    setup_karabiner
     echo
 
     setup_pet
@@ -136,7 +137,7 @@ main() {
 
     setup_fig
     echo
-    
+
     setup_rectangle
     echo
 
@@ -146,8 +147,8 @@ main() {
     setup_zsh
     echo
 
-    # 심볼릭 링크 자동 생성
-    log_info "설정 파일 심볼릭 링크 생성 중..."
+    # 심볼릭 링크 자동 생성 (GNU Stow)
+    log_info "GNU Stow로 설정 파일 심볼릭 링크 생성 중..."
     "$SCRIPT_DIR/sync.sh"
     echo
 
@@ -176,13 +177,12 @@ main() {
 
     # 설치 이후 앱 자동으로 실행되도록
     log_info "설치된 앱들을 실행합니다..."
-    open ~/.hammerspoon/init.lua 
     open -a Hammerspoon
     open -a Rectangle
     echo
-    
+
     log_set "앱들이 실행되었습니다. 각 앱의 권한 요청 창이 나타나면 허용해주세요."
 }
 
 # 스크립트 실행
-main 
+main

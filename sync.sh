@@ -3,6 +3,7 @@
 # 색상 정의
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
+RED='\033[0;31m'
 NC='\033[0m'
 
 # 스크립트 디렉토리 경로
@@ -16,31 +17,25 @@ log_done() {
     echo -e "${YELLOW}✓ $1${NC}"
 }
 
+log_error() {
+    echo -e "${RED}✖ $1${NC}"
+}
+
+# stow 설치 확인
+if ! command -v stow &> /dev/null; then
+    log_error "GNU Stow가 설치되어 있지 않습니다. 'brew install stow'로 설치해주세요."
+    exit 1
+fi
+
 echo
-log_info "심볼릭 링크 설정을 시작합니다..."
+log_info "GNU Stow로 심볼릭 링크를 설정합니다..."
 echo
 
-# Hammerspoon
-log_info "Hammerspoon 심볼릭 링크 생성 중..."
-rm -rf ~/.hammerspoon
-ln -sf "$SCRIPT_DIR/hammerspoon" ~/.hammerspoon
-log_done "Hammerspoon 심볼릭 링크 완료"
-echo
+stow -d "$SCRIPT_DIR" -t "$HOME" --restow . 2>&1
 
-# Pet
-log_info "Pet 심볼릭 링크 생성 중..."
-mkdir -p ~/.config/pet
-rm -f ~/.config/pet/snippet.toml
-ln -sf "$SCRIPT_DIR/pet/snippet.toml" ~/.config/pet/snippet.toml
-log_done "Pet 심볼릭 링크 완료"
-echo
-
-# Fig
-log_info "Fig 심볼릭 링크 생성 중..."
-mkdir -p ~/.fig
-rm -f ~/.fig/settings.json
-ln -sf "$SCRIPT_DIR/fig/settings.json" ~/.fig/settings.json
-log_done "Fig 심볼릭 링크 완료"
-echo
-
-log_done "모든 심볼릭 링크 설정이 완료되었습니다!"
+if [ $? -eq 0 ]; then
+    log_done "모든 심볼릭 링크 설정이 완료되었습니다!"
+else
+    log_error "심볼릭 링크 설정 중 오류가 발생했습니다."
+    exit 1
+fi
