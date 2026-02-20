@@ -1,0 +1,37 @@
+font-family = Google Sans Code
+font-family = Sarasa Term K
+font-size = 16
+theme = GitHub Light Default
+
+# ANSI black을 연한 파랑으로 교체 (Claude Code 등 하이라이트 가독성)
+palette = 0=#dbe9f6
+
+shell-integration-features = no-cursor, sudo, no-title
+cursor-style = block
+
+# 한글 렌더링 보정
+adjust-cell-height = 15%
+adjust-cell-width = 0%
+adjust-font-baseline = -2%
+grapheme-width-method = unicode
+font-synthetic-style = bold,italic,bold-italic
+
+# 마우스
+mouse-hide-while-typing = true
+mouse-scroll-multiplier = 2
+
+# 윈도우
+window-padding-balance = true
+window-save-state = always
+window-colorspace = "display-p3"
+window-decoration = false
+macos-titlebar-style = hidden
+background-opacity = 1
+
+# 키바인딩
+keybind = cmd+s>r=reload_config
+keybind = cmd+s>x=close_surface
+keybind = cmd+s>n=new_window
+keybind = cmd+s>c=new_tab
+keybind = cmd+s>shift+l=next_tab
+keybind = super+d=unbind
