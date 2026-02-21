@@ -84,6 +84,34 @@ setup_tmux() {
     log_set "Tmux가 설치되었습니다."
 }
 
+# bat 설치
+setup_bat() {
+    log_info "bat 설치 중..."
+    brew install bat
+    log_set "bat이 설치되었습니다. (cat 대체, aliases.zsh에서 자동 로드됨)"
+}
+
+# jq 설치
+setup_jq() {
+    log_info "jq 설치 중..."
+    brew install jq
+    log_set "jq가 설치되었습니다. (JSON 처리, aliases.zsh에서 자동 로드됨)"
+}
+
+# direnv 설치
+setup_direnv() {
+    log_info "direnv 설치 중..."
+    brew install direnv
+    log_set "direnv가 설치되었습니다. (디렉토리별 환경변수, direnv.zsh에서 자동 로드됨)"
+}
+
+# GitHub CLI 설치
+setup_gh() {
+    log_info "GitHub CLI 설치 중..."
+    brew install gh
+    log_set "GitHub CLI가 설치되었습니다. (aliases.zsh에서 자동 로드됨)"
+}
+
 # GNU Stow 설치
 setup_stow() {
     log_info "GNU Stow 설치 중..."
@@ -142,6 +170,18 @@ main() {
     echo
 
     setup_tmux
+    echo
+
+    setup_bat
+    echo
+
+    setup_jq
+    echo
+
+    setup_direnv
+    echo
+
+    setup_gh
     echo
 
     setup_zsh

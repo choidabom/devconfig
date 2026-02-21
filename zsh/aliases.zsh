@@ -29,3 +29,15 @@ alias history='history -i -1000'
 if [ -d ~/.oh-my-zsh ]; then
     alias c=z
 fi
+
+# bat (enhanced cat)
+if command -v bat &> /dev/null; then
+    alias cat='bat --style=plain'
+    alias batp='bat --style=plain --paging=never'
+fi
+
+# jq (JSON processor)
+if command -v jq &> /dev/null; then
+    alias json='jq .'
+    alias jsonc='jq -C .'  # Colored output
+fi
