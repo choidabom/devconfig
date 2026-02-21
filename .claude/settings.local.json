@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/Users/dabom-choi/devconfig/bin/rundevel:*)",
+      "Bash(gh api:*)",
+      "Bash(bash /Users/dabom-choi/devconfig/sync.sh)",
+      "Bash(git mv:*)",
+      "Bash(git -C /Users/dabom-choi/devconfig checkout HEAD -- hammerspoon/init.lua hammerspoon/init.devom hammerspoon/init.pshyg hammerspoon/move-resize.lua hammerspoon/window-management.lua fig/settings.json pet/snippet.toml)",
+      "Bash(git -C /Users/dabom-choi/devconfig config --list --local)",
+      "Bash(stow:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
