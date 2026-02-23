@@ -1,5 +1,5 @@
 local keyMap = {
-    C = "Google Chrome",
+    C = "Dia",
     F = "Finder",
     S = "Slack",
     I = "iTerm",
