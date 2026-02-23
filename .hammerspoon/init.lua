@@ -10,7 +10,8 @@ local keyMap = {
     D = 'Dia',
     X = 'Cursor',
     Z = 'Zed',
-    G = 'Ghostty'
+    G = 'Ghostty',
+    O = 'Obsidian'
 }
 
 for k, prog in pairs(keyMap) do
