@@ -71,6 +71,14 @@ stow -t ~ --restow .
   - 테스트 결과를 판단하여 PASS/FAIL 보고
   - 사용 예: "localhost:3000 회원가입 폼 테스트해줘"
 
+### Browser Automation
+
+**모든 브라우저 자동화는 `agent-browser` CLI를 사용한다. Playwright MCP 도구(`mcp__plugin_playwright_*`)를 사용하지 않는다.**
+
+- 웹 QA, 스크래핑, 폼 자동화, URL 콘텐츠 추출 등 브라우저가 필요한 모든 작업에 `agent-browser` CLI를 Bash로 실행
+- Playwright MCP 대비 93% 토큰 절감
+- 상세 명령어는 `.claude/skills/agent-browser/` 참조
+
 ## Important Notes
 
 - 커밋 메시지는 영어로 작성 (feat:, fix:, refactor: 등 conventional commits 스타일)
