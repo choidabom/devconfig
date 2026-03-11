@@ -58,6 +58,19 @@ stow -t ~ --restow .
 4. `install.sh`에 설치 함수 추가
 5. `README.md` 업데이트
 
+## Claude Code Integration
+
+### Custom Agents
+
+`.claude/agents/` 디렉토리에 프로젝트 전용 에이전트 정의:
+
+- **browser-qa** - 웹 페이지 기능 QA 자동화 에이전트
+  - agent-browser CLI를 사용하여 브라우저 자동화
+  - 사용자가 설명한 기능 동작을 자율적으로 테스트
+  - API 호출 모니터링 및 UI 변경사항 검증
+  - 테스트 결과를 판단하여 PASS/FAIL 보고
+  - 사용 예: "localhost:3000 회원가입 폼 테스트해줘"
+
 ## Important Notes
 
 - 커밋 메시지는 영어로 작성 (feat:, fix:, refactor: 등 conventional commits 스타일)

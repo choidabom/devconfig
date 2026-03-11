@@ -4,6 +4,3 @@
 *.bak
 .gitconfig/gitconfig_local
 .gitconfig/gitignore_global
-
-# Claude Code
-.claude/ 

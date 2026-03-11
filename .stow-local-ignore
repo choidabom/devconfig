@@ -15,7 +15,6 @@ sync\.sh
 ^docs$
 
 # 프로젝트 설정
-^\.claude$
 ^\.gitconfig$
 ^\.husky$
 ^\.vscode$

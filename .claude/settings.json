@@ -108,10 +108,10 @@
     "security-guidance@claude-plugins-official": true,
     "pr-review-toolkit@claude-plugins-official": true,
     "plugin-dev@claude-plugins-official": true,
-    "explanatory-output-style@claude-plugins-official": true,
+    "explanatory-output-style@claude-plugins-official": false,
     "claude-md-management@claude-plugins-official": true,
     "hookify@claude-plugins-official": true,
-    "learning-output-style@claude-plugins-official": true,
+    "learning-output-style@claude-plugins-official": false,
     "playground@claude-plugins-official": true
   },
   "spinnerVerbs": {
@@ -139,5 +139,6 @@
       "연결고리 찾는 중"
     ]
   },
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "effortLevel": "high"
 }

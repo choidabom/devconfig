@@ -112,6 +112,13 @@ setup_gh() {
     log_set "GitHub CLI가 설치되었습니다. (aliases.zsh에서 자동 로드됨)"
 }
 
+# Zed 에디터 설치
+setup_zed() {
+    log_info "Zed 에디터 설치 중..."
+    brew install --cask zed
+    log_set "Zed가 설치되었습니다."
+}
+
 # GNU Stow 설치
 setup_stow() {
     log_info "GNU Stow 설치 중..."
@@ -182,6 +189,9 @@ main() {
     echo
 
     setup_gh
+    echo
+
+    setup_zed
     echo
 
     setup_zsh
