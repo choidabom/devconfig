@@ -1,5 +1,5 @@
 local keyMap = {
-    C = "Dia",
+    C = "cmux",
     F = "Finder",
     S = "Slack",
     I = "Ghostty",
