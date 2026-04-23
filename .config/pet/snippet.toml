@@ -42,3 +42,8 @@
   description = "[devconfig] sync - 레포 설정을 로컬에 반영"
   command = "~/devconfig/sync.sh"
   output = ""
+
+[[snippets]]
+  description = "[claude-teams] 6-role 팀 프롬프트 템플릿을 클립보드로 복사"
+  command = "cat ~/devconfig/docs/claude-team-template.md | pbcopy && echo 'copied to clipboard'"
+  output = ""

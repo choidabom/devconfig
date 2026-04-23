@@ -1,6 +1,6 @@
 font-family = Google Sans Code
 font-family = Sarasa Term K
-font-size = 16
+font-size = 12
 theme = GitHub Light Default
 
 # ANSI black을 연한 파랑으로 교체 (Claude Code 등 하이라이트 가독성)

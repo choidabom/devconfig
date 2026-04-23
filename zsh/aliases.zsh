@@ -41,3 +41,7 @@ if command -v jq &> /dev/null; then
     alias json='jq .'
     alias jsonc='jq -C .'  # Colored output
 fi
+
+# Claude Code
+alias claude='claude --dangerously-skip-permissions'
+alias claude-teams='CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 claude --dangerously-skip-permissions'
