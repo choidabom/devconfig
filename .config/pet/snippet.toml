@@ -39,6 +39,11 @@
   output = ""
 
 [[snippets]]
+  description = "[port kill] 해당 포트 점유 프로세스 종료"
+  command = "lsof -ti:<port> | xargs kill -9"
+  output = ""
+
+[[snippets]]
   description = "[devconfig] sync - 레포 설정을 로컬에 반영"
   command = "~/devconfig/sync.sh"
   output = ""
