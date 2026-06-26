@@ -1,6 +1,6 @@
 [[snippets]]
   description = "[git] default branch sync (main/master auto-detect)"
-  command = "git checkout \"$(git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^origin/@@')\" && git pull --prune && git branch -D "
+  command = "_gsync "
   output = ""
 
 [[snippets]]
