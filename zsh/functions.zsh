@@ -34,3 +34,19 @@ _stern() {
         command stern -e healthCheck --template '{{color .PodColor .PodName}} {{.Message}}' -E $2 $1
     fi
 }
+
+# Sync to the repo's default branch (main/master), prune deleted remotes
+# usage: _gsync            → checkout default branch + pull --prune
+#        _gsync my-branch  → above, then force-delete my-branch
+_gsync() {
+    local d
+    d=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null | sed 's@^origin/@@')
+    if [[ -z "$d" ]]; then
+        local b
+        for b in main master; do
+            git show-ref --verify --quiet "refs/remotes/origin/$b" && { d=$b; break; }
+        done
+    fi
+    git checkout "$d" && git pull --prune
+    [[ -n "$1" ]] && git branch -D "$1"
+}

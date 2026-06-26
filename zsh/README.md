@@ -50,6 +50,7 @@ done
 - `_uuid`: 소문자 UUID 생성
 - `_ecurl`: curl 성능 측정 (3회 실행)
 - `_stern`: Kubernetes 로그 (healthCheck 제외)
+- `_gsync`: 기본 브랜치(main/master 자동 감지)로 이동 + `pull --prune`, 인자로 브랜치 강제 삭제
 
 ### [history.zsh](history.zsh)
 
