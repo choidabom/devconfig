@@ -4,9 +4,6 @@
     autocrlf = false
     eol = lf
     pager = less -F -X
-	hooksPath = ~/.git_template/hooks
-[init]
-	templatedir = ~/.git_template/hooks
 [ui]
 [url "git@gitlab.com:"]
     insteadOf = https://gitlab.com/
