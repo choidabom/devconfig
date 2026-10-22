@@ -205,10 +205,12 @@ Task 도구에서 호출하는 AI 페르소나.
 |------|------|
 | `UserPromptSubmit/append_ultrathink.py` | 프롬프트 끝 `-u` → ultrathink 모드 추가 |
 | `check-env-files.sh` | .env 파일 커밋 방지 |
-| `check-hardcoded-paths.sh` | 하드코딩된 경로 감지 |
+| `check-hardcoded-paths.sh` | 커밋에 `$HOME` 절대 경로가 들어가면 차단 |
 | `check-sensitive-files.sh` | 민감 파일 감지 |
 | `update-brewfile.sh` | Brewfile 자동 업데이트 |
 | `watch-notify.sh` | 파일 변경 감시 알림 |
+
+`check-*.sh` 세 개는 git pre-commit 훅(`.githooks/pre-commit`)이 실행한다. `install.sh`가 `git config core.hooksPath .githooks`로 연결하며, 수동으로 켜려면 같은 명령을 한 번 실행한다.
 
 ## claude-docs/ - 참고 문서
 

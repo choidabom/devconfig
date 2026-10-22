@@ -16,6 +16,7 @@ sync\.sh
 
 # 프로젝트 설정
 ^\.gitconfig$
+^\.githooks$
 ^\.husky$
 ^\.vscode$
 ^\.stow-local-ignore$

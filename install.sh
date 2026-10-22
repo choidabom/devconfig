@@ -120,6 +120,12 @@ setup_zed() {
 }
 
 # GNU Stow 설치
+setup_githooks() {
+    log_info "git pre-commit 훅을 연결합니다..."
+    git -C "$SCRIPT_DIR" config core.hooksPath .githooks
+    log_set "core.hooksPath = .githooks"
+}
+
 setup_stow() {
     log_info "GNU Stow 설치 중..."
     brew install stow
@@ -159,6 +165,9 @@ main() {
 
     # 각 도구 설치
     setup_stow
+    echo
+
+    setup_githooks
     echo
 
     setup_hammerspoon

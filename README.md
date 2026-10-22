@@ -23,6 +23,7 @@ devconfig/
 │
 ├── zsh/                            ~/devconfig/zsh/*.zsh (source)
 ├── bin/                            ~/devconfig/bin (PATH)
+├── .githooks/                      git pre-commit (core.hooksPath)
 └── install.sh, sync.sh
 ```
 

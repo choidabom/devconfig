@@ -1,0 +1,11 @@
+#!/bin/bash
+# Git pre-commit hook. Enabled by `git config core.hooksPath .githooks` (install.sh does this).
+# Runs each check script in .claude/hooks; any non-zero exit aborts the commit.
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+
+for check in check-env-files.sh check-sensitive-files.sh check-hardcoded-paths.sh; do
+    "$REPO_ROOT/.claude/hooks/$check" || exit 1
+done
+
+exit 0
