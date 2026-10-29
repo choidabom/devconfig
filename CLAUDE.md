@@ -1,16 +1,5 @@
 # CLAUDE.md
 
-## 접근 방식
-
-- 코드를 수정하기 전에 반드시 해당 파일을 먼저 읽는다. 읽지 않은 파일을 편집하지 않는다.
-- 이미 읽은 파일을 다시 읽지 않는다 (파일이 변경되었을 때만 재읽기).
-- 간결하게 응답한다. 아첨("좋은 질문이네요!"), 빈 인사("도움이 되었길 바랍니다!"), 질문 되풀이 금지.
-- 요청 범위만 수행한다. 요청하지 않은 리팩토링, 추가 기능 제안, docstring 추가 금지.
-- 가장 단순한 해결책을 먼저 시도한다. 과도한 추상화 금지.
-- 확실하지 않으면 "모르겠다"고 말한다. 파일 경로, 함수명을 추측하지 않는다.
-- 코드를 먼저 보여주고, 설명은 자명하지 않은 경우에만.
-- 한 번의 집중된 코딩 패스로 완료. write-delete-rewrite 사이클 금지.
-
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Repository Overview
@@ -81,14 +70,6 @@ stow -t ~ --restow .
   - API 호출 모니터링 및 UI 변경사항 검증
   - 테스트 결과를 판단하여 PASS/FAIL 보고
   - 사용 예: "localhost:3000 회원가입 폼 테스트해줘"
-
-### Browser Automation
-
-**모든 브라우저 자동화는 `agent-browser` CLI를 사용한다. Playwright MCP 도구(`mcp__plugin_playwright_*`)를 사용하지 않는다.**
-
-- 웹 QA, 스크래핑, 폼 자동화, URL 콘텐츠 추출 등 브라우저가 필요한 모든 작업에 `agent-browser` CLI를 Bash로 실행
-- Playwright MCP 대비 93% 토큰 절감
-- 상세 명령어는 `.claude/skills/agent-browser/` 참조
 
 ## Important Notes
 

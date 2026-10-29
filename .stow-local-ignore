@@ -20,6 +20,8 @@ sync\.sh
 ^\.husky$
 ^\.vscode$
 ^\.stow-local-ignore$
+# 레포 전용 지침. ~/ 에 두면 홈 아래 모든 프로젝트에서 로드된다
+^/CLAUDE\.md$
 
 # 기타
 ^iterm2$
