@@ -39,7 +39,8 @@ devconfig/
 # 또는 직접 stow 실행
 stow -t ~ --restow .
 
-# 비공개 설정 (settings.json 등): private 레포 clone 후 링크
+# 비공개 설정 (settings.json, 업무 스킬 등): private 레포 clone 후 링크
+# sync.sh 가 ~/.claude/skills, ~/.claude/agents 를 디렉토리로 먼저 만들어 두 레포가 함께 링크한다
 git clone https://github.com/choidabom/devconfig-private.git ~/devconfig-private
 stow -d ~/devconfig-private -t ~ --restow .
 ```

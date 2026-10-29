@@ -31,6 +31,9 @@ echo
 log_info "GNU Stow로 심볼릭 링크를 설정합니다..."
 echo
 
+# devconfig-private 도 이 두 디렉토리에 항목을 링크하므로 디렉토리 전체 링크가 되지 않게 먼저 만든다
+mkdir -p "$HOME/.claude/skills" "$HOME/.claude/agents"
+
 stow -d "$SCRIPT_DIR" -t "$HOME" --restow . 2>&1
 
 if [ $? -eq 0 ]; then

@@ -15,7 +15,6 @@ Stow로 `~/.claude/`에 심링크되어 적용된다.
 │   ├── obsidian/                Obsidian 작업 커맨드
 │   └── tdp/                     TDP(테스트 주도 개발) 커맨드
 ├── agents/                    전문가 에이전트
-│   └── obsidian-ops-team/       Obsidian 운영 팀 에이전트
 ├── skills/                    자동 적용 스킬 (키워드 매칭)
 ├── hooks/                     훅 스크립트
 │   └── UserPromptSubmit/        프롬프트 제출 시 실행
@@ -36,9 +35,14 @@ Stow로 `~/.claude/`에 심링크되어 적용된다.
 |------|-------------|
 | `.claude/settings.json` | `~/.claude/settings.json` |
 | `.claude/CLAUDE.private.md` | `~/.claude/CLAUDE.private.md` |
+| `.claude/skills/<이름>` | `~/.claude/skills/<이름>` |
+| `.claude/agents/<이름>` | `~/.claude/agents/<이름>` |
+
+두 레포가 `~/.claude/skills`, `~/.claude/agents` 에 함께 링크하므로 이 두 경로는 디렉토리 링크가 아니라 일반 디렉토리이고, 안의 항목마다 링크가 있다. 디렉토리가 없으면 devconfig stow가 디렉토리 전체를 링크하고 private 레포 stow는 충돌로 실패하므로, `sync.sh`가 stow 전에 두 디렉토리를 만든다.
 
 ```bash
 git clone https://github.com/choidabom/devconfig-private.git ~/devconfig-private
+~/devconfig/sync.sh
 stow -d ~/devconfig-private -t ~ --restow .
 ```
 
@@ -174,16 +178,6 @@ Task 도구에서 호출하는 AI 페르소나.
 | `youtube-summarizer` | YouTube 영상 요약 |
 | `youtube-obsidian-summarizer` | YouTube 요약 → Obsidian 노트 |
 | `zettelkasten-expert` | 제텔카스텐 노트 정리 |
-
-### 팀 에이전트
-
-| 에이전트 | 역할 |
-|----------|------|
-| `obsidian-ops-team/connection-agent` | 노트 연결 관계 분석 |
-| `obsidian-ops-team/metadata-agent` | 메타데이터 관리 |
-| `obsidian-ops-team/moc-agent` | MOC(Map of Content) 생성 |
-| `obsidian-ops-team/review-agent` | 노트 리뷰 |
-| `obsidian-ops-team/tag-agent` | 태그 관리 |
 
 ## skills/ - 자동 적용 스킬
 
