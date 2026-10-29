@@ -4,3 +4,5 @@
 *.bak
 .gitconfig/gitconfig_local
 .gitconfig/gitignore_global
+.claude/settings.local.json
+.claude/skills/synced/
