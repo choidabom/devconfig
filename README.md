@@ -7,7 +7,7 @@ Mac 개발 환경 설정 파일 모음. [GNU Stow](https://www.gnu.org/software/
 ```
 devconfig/
 ├── .claude/                        → ~/.claude/
-│   ├── settings.json                  전역 설정 (환경변수, 권한, hooks)
+│   ├── CLAUDE.md                      전역 지침 (모든 프로젝트)
 │   ├── keybindings.json               키바인딩
 │   ├── commands/                      슬래시 커맨드 (/명령어)
 │   ├── agents/                        전문가 에이전트
@@ -38,6 +38,10 @@ devconfig/
 
 # 또는 직접 stow 실행
 stow -t ~ --restow .
+
+# 비공개 설정 (settings.json 등): private 레포 clone 후 링크
+git clone https://github.com/choidabom/devconfig-private.git ~/devconfig-private
+stow -d ~/devconfig-private -t ~ --restow .
 ```
 
 ## Tools

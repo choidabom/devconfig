@@ -7,7 +7,7 @@ Stow로 `~/.claude/`에 심링크되어 적용된다.
 
 ```
 .claude/
-├── settings.json              전역 설정 (환경변수, 권한, hooks, 플러그인)
+├── CLAUDE.md                  전역 지침 (모든 프로젝트에 적용)
 ├── settings.local.json        프로젝트별 권한 (자동 생성)
 ├── keybindings.json           키바인딩
 ├── commands/                  슬래시 커맨드 (/명령어)
@@ -22,7 +22,29 @@ Stow로 `~/.claude/`에 심링크되어 적용된다.
 └── claude-docs/               참고 문서
 ```
 
+## CLAUDE.md
+
+`~/.claude/CLAUDE.md`로 심링크되는 전역 지침이다. 아티팩트 글자 레이아웃, 설명 방식, 문장 부호, 작업 번호 표기 규칙을 담는다.
+
+마지막 줄의 `@~/.claude/CLAUDE.private.md`는 비공개 레포의 지침을 import 한다. 그 파일이 없으면 import는 오류 없이 건너뛴다.
+
+## 비공개 레포 (devconfig-private)
+
+회사 관련 값이 있는 파일은 private 레포 `choidabom/devconfig-private`에서 관리한다.
+
+| 파일 | 심링크 경로 |
+|------|-------------|
+| `.claude/settings.json` | `~/.claude/settings.json` |
+| `.claude/CLAUDE.private.md` | `~/.claude/CLAUDE.private.md` |
+
+```bash
+git clone https://github.com/choidabom/devconfig-private.git ~/devconfig-private
+stow -d ~/devconfig-private -t ~ --restow .
+```
+
 ## settings.json
+
+비공개 레포에서 관리한다. 주요 항목은 다음과 같다.
 
 | 항목 | 설명 |
 |------|------|
@@ -32,7 +54,7 @@ Stow로 `~/.claude/`에 심링크되어 적용된다.
 | `hooks.Stop` | Claude 응답 완료 시 macOS 알림 |
 | `hooks.UserPromptSubmit` | 프롬프트 끝에 `-u` 붙이면 ultrathink 모드 |
 | `spinnerVerbs` | 한국어 스피너 ("생각하는 중", "분석하는 중" 등) |
-| `enabledPlugins` | code-review, github, playwright, serena 등 공식 플러그인 |
+| `enabledPlugins` | superpowers, code-review, feature-dev 등 공식 플러그인과 외부 마켓플레이스 플러그인 |
 
 ### 의존성
 
