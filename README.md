@@ -21,6 +21,7 @@ devconfig/
 ├── .hammerspoon/init.lua           → ~/.hammerspoon/
 ├── .tmux.conf                      → ~/.tmux.conf
 │
+├── docs/                           참고 문서 (심링크 가이드, 발표 자료)
 ├── zsh/                            ~/devconfig/zsh/*.zsh (source)
 ├── bin/                            ~/devconfig/bin (PATH)
 ├── .githooks/                      git pre-commit (core.hooksPath)
