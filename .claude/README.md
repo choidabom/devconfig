@@ -99,7 +99,6 @@ stow -d ~/devconfig-private -t ~ --restow .
 
 | 커맨드 | 파일 | 용도 |
 |--------|------|------|
-| `/coffee-time` | `coffee-time.md` | 팀 커피타임 대화 정리 → Git 저장 |
 | `/meeting-minutes` | `meeting-minutes.md` | 회의 녹취록 → 체계적 회의록 생성 |
 
 ### augmented/ - 프롬프트 기법
@@ -118,19 +117,9 @@ stow -d ~/devconfig-private -t ~ --restow .
 
 | 커맨드 | 용도 |
 |--------|------|
-| `add-tag` | 노트에 태그 추가 |
-| `add-tag-and-move-file` | 태그 추가 + 파일 이동 |
-| `batch-process` | 일괄 처리 |
-| `batch-summarize-urls` | URL 일괄 요약 |
-| `create-presentation` | 프레젠테이션 생성 |
-| `related-contents` | 관련 콘텐츠 탐색 |
-| `summarize-article` | 기사 요약 |
-| `summarize-youtube` | YouTube 요약 |
-| `translate-article` | 기사 번역 |
-| `translate-youtube` | YouTube 번역 |
-| `vault-query` | Vault 검색 |
-| `weekly-social-posts` | 주간 소셜 포스트 생성 |
-| `tagging-example` | 태깅 예시 |
+| `summarize-youtube` | YouTube 요약 → Obsidian 문서 |
+| `add-tag` | 노트에 태그 추가 (summarize-youtube 가 태그 규칙으로 참조) |
+| `tagging-example` | 태깅 예시 (add-tag 가 참조) |
 
 ### tdp/ - 테스트 주도 개발
 
@@ -187,9 +176,7 @@ Task 도구에서 호출하는 AI 페르소나.
 
 | 스킬 | 용도 | 트리거 키워드 |
 |------|------|--------------|
-| `weekly-claude-analytics` | 주간 Claude 사용 통계 리포트 | "주간 분석", "weekly analytics" |
 | `learning-tracker` | 학습 내용 추출/분류 | "학습", "배운 것" |
-| `project-time-tracker` | 프로젝트별 시간 추적 | "시간 추적" |
 | `usage-pattern-analyzer` | 도구 사용 패턴 분석 | "사용 패턴" |
 
 ### 도구 가이드
@@ -198,7 +185,6 @@ Task 도구에서 호출하는 AI 페르소나.
 |------|------|
 | `obsidian-vault` | Obsidian vault 경로, 태그 체계, 검색 가이드 |
 | `gh` | GitHub CLI 작업 가이드 |
-| `jira` | Jira 연동 가이드 |
 | `vis` | vault-intelligence 검색 도구 가이드 |
 
 ### 콘텐츠/개발
@@ -212,7 +198,6 @@ Task 도구에서 호출하는 AI 페르소나.
 | `backlog-md` | 백로그 관리 |
 | `brunch-writer` | 브런치 글 작성 |
 | `weekly-newsletter` | 주간 뉴스레터 생성 |
-| `databricks-academy` | Databricks 학습 (msbaek 특화) |
 
 ## hooks/ - 훅 스크립트
 
@@ -238,8 +223,5 @@ Task 도구에서 호출하는 AI 페르소나.
 msbaek 환경에 특화된 항목들 (본인 환경에 맞게 수정 필요):
 
 - `settings.json` 내 경로 및 MCP 서버 설정
-- `commands/coffee-time.md` - Git 저장소 경로 (`~/git/kt4u/coffee-time/`)
 - `commands/meeting-minutes.md` - vault 경로 (`~/DocumentsLocal/msbaek_vault/`)
 - `skills/obsidian-vault/` - vault 경로
-- `skills/weekly-claude-analytics/` - 세션 로그 경로
-- `skills/databricks-academy/` - Databricks 특화
