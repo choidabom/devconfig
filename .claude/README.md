@@ -187,7 +187,6 @@ Task 도구에서 호출하는 AI 페르소나.
 
 | 스킬 | 용도 | 트리거 키워드 |
 |------|------|--------------|
-| `daily-work-logger` | 일일 작업 내역 → Daily Note 자동 반영 | "작업 정리", "daily log" |
 | `weekly-claude-analytics` | 주간 Claude 사용 통계 리포트 | "주간 분석", "weekly analytics" |
 | `learning-tracker` | 학습 내용 추출/분류 | "학습", "배운 것" |
 | `project-time-tracker` | 프로젝트별 시간 추적 | "시간 추적" |
@@ -242,6 +241,5 @@ msbaek 환경에 특화된 항목들 (본인 환경에 맞게 수정 필요):
 - `commands/coffee-time.md` - Git 저장소 경로 (`~/git/kt4u/coffee-time/`)
 - `commands/meeting-minutes.md` - vault 경로 (`~/DocumentsLocal/msbaek_vault/`)
 - `skills/obsidian-vault/` - vault 경로
-- `skills/daily-work-logger/` - vault 경로, Things MCP 설정
 - `skills/weekly-claude-analytics/` - 세션 로그 경로
 - `skills/databricks-academy/` - Databricks 특화
