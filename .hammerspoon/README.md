@@ -35,39 +35,31 @@ https://github.com/Hammerspoon/hammerspoon
 
 ## 단축키 사용법
 
-> **`cmd`와 `ctrl`키를 동시에 누르고 keyMap에 넣은 키 값을 누르면 해당 앱이 실행된다.**
+> **`cmd`와 `ctrl`키를 동시에 누르고 연결해 둔 대문자 키를 누르면 해당 앱이 실행된다.**
 
-아래 코드에 있는 keyMap을 예로 들자면, `cmd + ctrl + S`를 누르면 `Slack`앱이 실행된다.
+예를 들어 `S`에 `Slack`을 연결해 두면 `cmd + ctrl + S`로 `Slack`이 실행되거나 앞으로 온다.
 
-```lua
-local keyMap = {
-    C = "Google Chrome",
-    F = "Finder",
-    P = "ChatGPT",
-    S = "Slack",
-    I = "iTerm",
-    N = 'notes',
-    K = 'kakaoTalk',
-    B = 'Beekeeper Studio',
-    M = 'YouTube Music',
-    D = 'Discord',
-    X = 'Cursor',
-    Z = 'Zed',
-}
+### 앱과 키 연결하기
 
-for k, prog in pairs(keyMap) do
-    hs.hotkey.bind({'cmd', 'ctrl'}, k, function()
-        print(k, prog)
-        hs.application.launchOrFocus(prog)
-    end)
-end
-```
+1. `cmd + ctrl + /`를 누른다. 설치된 앱 목록이 뜬다. 이미 연결된 앱은 아래에 `cmd+ctrl+키`가 표시된다.
+2. 앱을 고른다. A–Z 목록이 뜨고, 각 키에 지금 연결된 앱이 표시된다.
+3. 키를 고르면 바로 적용된다. Reload Config는 필요 없다.
+   - 이미 다른 앱이 연결된 키를 고르면 새 앱으로 바뀐다.
+   - 이미 연결된 앱이면 목록 맨 위의 `연결 해제`로 연결을 지울 수 있다.
+
+앱 목록은 `/Applications`, `/Applications/Utilities`, `/System/Applications`, `/System/Applications/Utilities`, `~/Applications`의 `.app`과 Finder다.
+
+### 매핑 저장 위치
+
+- 연결 결과는 `.hammerspoon/keymap.json`에 저장된다. `~/.hammerspoon`이 이 레포의 `.hammerspoon`을 가리키므로 연결할 때마다 레포의 파일이 바뀐다.
+- 바뀐 매핑은 `git diff .hammerspoon/keymap.json`으로 확인하고 커밋한다.
+- `keymap.json`을 직접 고쳐도 된다. 이때는 Reload Config를 눌러야 적용된다.
 
 ## 유의점
 
 1. Key Mapping
 
-   - `init.lua`에서 keyMap 수정 시, key 값의 이름이 특정 앱의 이름과 정확하게 일치해야 한다.
+   - `keymap.json`에 직접 적는 앱 이름은 실제 앱 이름과 일치해야 한다. `cmd + ctrl + /`로 연결하면 설치된 앱 이름을 그대로 쓴다.
 
 2. 설정 반영
 
